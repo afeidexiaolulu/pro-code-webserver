@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    username: root
+    jdbc-url: jdbc:mysql://localhost:3306/diaocheliang?characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true
+    type: com.alibaba.druid.pool.DruidDataSource
+    tomcat:
+      connection-properties: druid.stat.mergeSql=true
+      max-idle: 8
+      min-idle: 8
+      max-active: 20
+      initial-size: 10
+  #指定环境为
+  profiles:
+    active: prod
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      table-underline: true
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+
+
+
